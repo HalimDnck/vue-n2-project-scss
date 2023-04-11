@@ -7,6 +7,7 @@ $gray: #5C6672;
 $darkBlue: #26303E;
 $white: #D8D9DD;
 $purple: #4F359B;
+$gray2: #485B69;
 
 //mixin for textstyle
 @mixin textStyle($fontSize: 18px, $fontWeight: normal){
@@ -23,9 +24,17 @@ $purple: #4F359B;
    justify-content: center;
 }
 
+//mixin for active icon color
+@mixin activeColor{
+   filter: invert(24%) sepia(83%) saturate(900%) hue-rotate(226deg) brightness(88%) contrast(104%);
+}
+
 *{
    font-family: $poppins;
    margin: 0;
    padding: 0;
    box-sizing: border-box;
 }
+
+
+

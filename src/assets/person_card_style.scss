@@ -1,0 +1,24 @@
+@import "./styles.scss";
+
+.card-container{
+   width: 400px;
+   height: 390px;
+
+   margin: 100px 100px;
+   padding: 20px;
+
+   border: 1px solid $gray;
+   border-radius: 12px;
+
+   .top-card{
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      img{
+         width: 100px;
+         height: 100px;
+         object-fit: cover;
+         border-radius: 50%;
+      }
+   }
+}

@@ -1,12 +1,29 @@
 <template>
-  <h1>Hello Vue</h1>
+  <div class="app-page">
+    <LeftNav />
 
+    <PersonCard />
 
+  </div>
+  
 </template>
 
 
 
-<script setup>
+<script>
+import LeftNav from './components/LeftNav.vue'
+import PersonCard from './components/PersonCard.vue'
+
+export default{
+  name: 'App',
+  components: {
+    LeftNav,
+    PersonCard,
+  },
+
+}
+
+
 
 </script>
 
