@@ -4,15 +4,79 @@
 
     <div class="main-content">
       <h2>All Users</h2>
-
+ 
       <div class="cards">
-        <PersonCard 
-          v-for="person in persons"
-          :key="person.id"
-          :name="person.name"
-          :email="person.email"
-          :website="person.website"
-          :photo="person.photo"/>
+
+
+      <router-link class="links"
+      v-for="person in persons"
+      :key="person.id"
+      :name="person.name"
+      :email="person.email"
+      :website="person.website"
+      :photo="person.photo"><div class="card-container">      
+      <div class="top-card">
+      <img :src="person.photo" alt="Profile Image" class="profile-img">
+
+      <div class="top-right-card">
+      <h3 class="name">{{ person.name }}</h3>
+      <p class="email">{{ person.email }}</p>
+      <p class="phone">+90 555 678 12 23</p>
+      </div>
+      </div>
+
+
+
+      <div class="bottom-card">
+      <div class="loc-container info">
+      <div class="loc-head info-head">
+         <img src="/src/icons/heartpin.png" alt="Location Icon">
+         Location
+      </div>
+
+      <div class="loc-main info-main">
+         <p class="home-address">
+            Timko sokak no:2
+            Yeni Mahalle / Ankara  
+         </p>
+      </div>
+      </div>
+
+      <div class="comp-container info">
+      <div class="comp-head info-head">
+         <img src="/src/icons/building.png" alt="Company Icon">
+         Company
+      </div>
+
+      <div class="comp-main info-main">
+         <p class="cpm-address">
+            Timko sokak no:2
+            Yeni Mahalle / Ankara  
+         </p>
+      </div>
+      </div>
+
+      <div class="web-container info">
+      <div class="web-head info-head">
+         <img src="/src/icons/world.png" alt="Website Icon">
+         Website
+      </div>
+
+      <div class="web-main info-main">
+         <p class="web-address">
+            {{ person.website }}
+         </p>
+      </div>
+      </div>
+      </div>
+
+
+
+      </div>
+      
+      </router-link>
+
+        
       </div>
       
     </div>
@@ -25,14 +89,13 @@
 
 <script>
 import LeftNav from './components/LeftNav.vue'
-import PersonCard from './components/PersonCard.vue'
 
 export default{
   name: 'App',
   components: {
     LeftNav,
-    PersonCard,
   },
+  props: ['name', 'email', 'photo', 'website'],
 
   data() {
       return{
