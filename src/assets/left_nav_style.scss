@@ -5,6 +5,8 @@
    width: 260px;
    height: 100vh;
    background: $white;
+   position: sticky;
+   top: 0;
 
    display: flex;
    flex-direction: column;
@@ -20,7 +22,7 @@
          width: 100%;
          height: 40px;
          border: none;
-         margin-top: 50px;
+         margin-top: 30px;
          background: #ffffffff;
          justify-self: start;
          color: $purple;

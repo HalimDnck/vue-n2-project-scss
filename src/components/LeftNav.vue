@@ -21,5 +21,4 @@
 
 <style lang="scss">
 @import "/src/assets/left_nav_style.scss"
-
 </style>

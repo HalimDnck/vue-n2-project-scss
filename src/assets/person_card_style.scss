@@ -1,24 +1,63 @@
 @import "./styles.scss";
 
-.card-container{
-   width: 400px;
-   height: 390px;
+a{
+   text-decoration: none;
+   color: black;
+   transition: box-shadow .5s;
 
-   margin: 100px 100px;
-   padding: 20px;
-
-   border: 1px solid $gray;
-   border-radius: 12px;
-
-   .top-card{
-      display: flex;
-      align-items: center;
-      gap: 20px;
-      img{
-         width: 100px;
-         height: 100px;
-         object-fit: cover;
-         border-radius: 50%;
+   .card-container{
+   
+      width: 400px;
+      height: 390px;
+      padding: 20px;
+   
+      border: 1px solid $profileGray;
+      border-radius: 12px;
+   
+      .top-card{
+         display: flex;
+         align-items: center;
+         gap: 20px;
+   
+         img{
+            width: 100px;
+            height: 100px;
+            object-fit: cover;
+            border-radius: 50%;
+         }
+         .top-right-card{
+            padding-left: 10px;
+            h3{
+               font-weight: 500;
+            }
+            p{
+               @include textStyle(14px, 200)
+            }
+         }
       }
+   
+      .bottom-card{
+         width: 50%;
+         padding-top: 20px;
+   
+         .info{
+            padding-bottom: 20px;
+            .info-head{
+               display: flex;
+               align-items: center;
+               gap: 10px;
+               font-size: 14px;
+            }
+            .info-main{
+               font-size: 14px;
+               font-weight: 200;
+            }
+         }
+      }
+   }
+
+   &:hover{
+      border-radius: 12px;
+      box-shadow: rgba(85, 85, 85, 0.25) 0px 15px 48px 0px;
    }
 }
