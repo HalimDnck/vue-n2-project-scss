@@ -8,13 +8,13 @@
  
       <div class="cards">
       <router-link class="links"
-      to="/todos:id"
       v-for="person in persons"
       :key="person.id"
       :name="person.name"
       :email="person.email"
       :website="person.website"
-      :photo="person.photo"><div class="card-container">      
+      :photo="person.photo" :to="`/todos/${person.id}`" 
+      ><div class="card-container">      
       <div class="top-card">
       <img :src="person.photo" alt="Profile Image" class="profile-img">
 
@@ -82,6 +82,7 @@
 
 <script>
 import LeftNav from './LeftNav.vue'
+import { useRoute } from 'vue-router';
 
 export default{
    name: 'Users',
@@ -89,6 +90,10 @@ export default{
       LeftNav,
    },
    props: ['name', 'email', 'photo', 'website'],
+   mounted(){
+      const route= useRoute();
+      console.warn("route", route);
+   },
    
    data() {
       return{

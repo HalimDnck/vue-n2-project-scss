@@ -13,7 +13,7 @@ const routes=[
    {
       name: 'Todos',
       component: Todos,
-      path: '/todos:id',
+      path: '/todos/:id',
    },
 ];
 
