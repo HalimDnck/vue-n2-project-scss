@@ -13,10 +13,12 @@
       :name="person.name"
       :email="person.email"
       :website="person.website"
-      :photo="person.photo" :to="`/todos/${person.id}`" 
+      :photo="person.photo"
+      :to="{ name: 'Todos', params: {id: person.id}}"
       ><div class="card-container">      
       <div class="top-card">
       <img :src="person.photo" alt="Profile Image" class="profile-img">
+
 
       <div class="top-right-card">
       <h3 class="name">{{ person.name }}</h3>
@@ -73,10 +75,13 @@
       </router-link>
         
       </div>
+
       
     </div>
 
   </div>
+
+  
 
 </template>
 
@@ -84,16 +89,15 @@
 import LeftNav from './LeftNav.vue'
 import { useRoute } from 'vue-router';
 
+
 export default{
    name: 'Users',
    components:{
       LeftNav,
+      
    },
    props: ['name', 'email', 'photo', 'website'],
-   mounted(){
-      const route= useRoute();
-      console.warn("route", route);
-   },
+   
    
    data() {
       return{
