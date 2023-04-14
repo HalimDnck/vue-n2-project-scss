@@ -1,0 +1,105 @@
+@import "./styles.scss";
+
+.todos-page{
+   display: flex;
+
+   .todos-container{
+      
+      header{
+         width: 100%;
+         height: 120px;
+         padding-left: 50px;
+
+         display: flex;
+         align-items: center;
+         justify-content: flex-start;
+         .go-back{
+            display: flex;
+            gap: 25px;
+            font-size: 20px;
+            font-weight: 600;
+            img{
+               width: 28px;
+            }
+         }
+
+
+      }
+
+      main{
+         width: 100%;
+         height: 100%;
+         padding-left: 60px;
+         .todo{
+            ul{
+               list-style: none;
+               li{
+                  display: flex;
+                  align-items: center;
+                  gap: 20px;
+                  
+                  .todo-item {
+                     display: block;
+                     position: relative;
+                     padding-left: 35px;
+                     margin-bottom: 12px;
+                     cursor: pointer;
+                     font-size: 18px;
+                     color: $gray2;
+                     -webkit-user-select: none;
+                     -moz-user-select: none;
+                     -ms-user-select: none;
+                     user-select: none;
+
+                     input {
+                        position: absolute;
+                        opacity: 0;
+                        cursor: pointer;
+                        height: 0;
+                        width: 0;
+                     }
+
+                     .new-checkmark {
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        height: 20px;
+                        width: 20px;
+                        margin-top: 3px;
+
+                        background: none;
+                        border: 2px solid $purple;
+                        border-radius: 5px;
+                        &:after {
+                           content: "";
+                           position: absolute;
+                           display: none;
+                           left: 4px;
+                           top: 0px;
+                           width: 5px;
+                           height: 10px;
+                           border: solid white;
+                           border-width: 0 2px 2px 0;
+                           -webkit-transform: rotate(45deg);
+                           -ms-transform: rotate(45deg);
+                           transform: rotate(45deg);
+                        }
+                     }
+
+                     input:checked ~ .new-checkmark {
+                        background-color: $purple;
+                     }
+                     input:checked ~ .new-checkmark:after {
+                        display: block;
+                     }
+                  }
+                 
+                
+                 
+                  
+               }
+            }
+         }
+      }
+   }
+}

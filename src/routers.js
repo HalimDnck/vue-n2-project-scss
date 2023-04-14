@@ -1,6 +1,9 @@
 import { createRouter, createWebHistory } from "vue-router"
 import Users from "./components/Users.vue"
 import Todos from "./components/Todos.vue"
+import Albums from "./components/Albums.vue"
+import Posts from "./components/Posts.vue"
+
 
 
 
@@ -14,6 +17,16 @@ const routes=[
       name: 'Todos',
       component: Todos,
       path: '/todos/:id',
+   },
+   {
+      name: 'Posts',
+      component: Todos,
+      path: '/posts/:id',
+   },
+   {
+      name: 'Albums',
+      component: Todos,
+      path: '/albums/:id',
    },
 ];
 

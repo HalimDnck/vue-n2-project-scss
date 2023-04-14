@@ -1,7 +1,30 @@
 <template>
-   <div>
+   <div class="todos-page">
       <ProfileNavVue/>
-      
+
+      <div class="todos-container">
+         <header>
+            <div class="go-back">
+               <router-link to="/">
+               <img src="../icons/leftarrow.png" alt="go back icon">
+               </router-link>
+               <p>Go Home</p>
+            </div>
+         </header>
+
+         <main>
+            <div class="todo">
+               <ul>
+                  <li>
+                     <label class="todo-item">One
+                        <input type="checkbox" checked="checked">
+                        <span class="new-checkmark"></span>
+                     </label>
+                  </li>
+               </ul>
+            </div>
+         </main>
+      </div>
    </div>
 </template>
 
@@ -93,3 +116,7 @@ export default{
 
 
 </script>
+
+<style lang="scss">
+   @import "../assets/todos_style.scss"
+</style>

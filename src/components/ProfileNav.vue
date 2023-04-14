@@ -10,13 +10,32 @@
          </div>
          <hr>
       </div>
-
+      
+      
       <div class="button-container">
-         <button class="users-btn">
-            <div class="active-shape"></div>
-            <img src="/src/icons/users.png" alt="">
-            Users
-         </button>
+         <router-link to="" custom v-slot="{ navigate }">
+            <button class="active-page" @click="navigate" role="link">
+               <div class="active-shape"></div>
+               <img src="/src/icons/checklist.png" alt="">
+               Todos
+            </button>
+         </router-link>
+
+         <router-link to="" custom v-slot="{ navigate }">
+            <button class="other-page" @click="navigate" role="link">
+               <div class="active-shape"></div>
+               <img src="/src/icons/notebook.png" alt="">
+               Posts
+            </button>
+         </router-link>
+
+         <router-link to="" custom v-slot="{ navigate }">
+            <button class="other-page" @click="navigate" role="link">
+               <div class="active-shape"></div>
+               <img src="/src/icons/heartphoto.png" alt="">
+               Albums
+            </button>
+         </router-link>
       </div>
 
       <div class="logo-container">

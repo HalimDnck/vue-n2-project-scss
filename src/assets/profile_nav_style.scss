@@ -61,7 +61,14 @@
       width: 100%;
       height: 50%;
 
-      .users-btn{
+      button{
+         margin-top: 20px;
+         img{
+            padding-bottom: 3px;
+         }
+      }
+
+      .active-page{
          width: 100%;
          height: 40px;
          border: none;
@@ -84,6 +91,30 @@
             border-top-right-radius: 6px;
             border-bottom-right-radius: 6px;
          }
+   
+         img{
+            padding-left: 40px;
+            padding-right: 20px;
+            @include activeColor;
+         }
+      }
+
+      .other-page{
+         width: 100%;
+         height: 40px;
+         border: none;
+         background: none;
+         justify-self: start;
+         color: $gray2;
+         font-weight: 300;
+         padding-left: 6px;
+   
+         @include textStyle(18px, normal);
+         cursor: pointer;
+   
+         display: flex;
+         justify-content: self-start;
+         align-items: center;
    
          img{
             padding-left: 40px;
