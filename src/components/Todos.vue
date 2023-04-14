@@ -1,13 +1,18 @@
 <template>
-
-   <h1>{{ person.name }}</h1>
-
+   <div>
+      <ProfileNavVue/>
+      
+   </div>
 </template>
 
 <script>
+import ProfileNavVue from './ProfileNav.vue';
 
 export default{
    name: 'Todos',
+   components:{
+      ProfileNavVue,
+   },
    
    data() {
       return{
