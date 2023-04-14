@@ -1,6 +1,10 @@
 <template>
    <div class="todos-page">
-      <ProfileNavVue/>
+      
+      <ProfileNavVue 
+      :name="person.name"
+      :email="person.email"
+      :photo="person.photo"/>
 
       <div class="todos-container">
          <header>
@@ -15,12 +19,34 @@
          <main>
             <div class="todo">
                <ul>
-                  <li>
-                     <label class="todo-item">One
-                        <input type="checkbox" checked="checked">
-                        <span class="new-checkmark"></span>
-                     </label>
+                  <li v-for="item in items"
+                  :key="item.id"
+                  :text="item.content"
+                  :checked="item.status"
+                  :class="item.class"
+                  >
+                     <div class="div">
+                        <label class="todo-item">{{ item.content }}
+                        <input type="checkbox" :class="item.class" >
+                        <span class="true-checkmark"></span>
+                        </label>
+                     </div>
                   </li>
+
+                  <li v-for="item in items"
+                  :key="item.id"
+                  :text="item.content"
+                  :checked="item.status"
+                  :class="item.class"
+                  >
+                     <div class="div">
+                        <label class="todo-item">{{ item.content }}
+                        <input type="checkbox" :class="item.class" >
+                        <span class="true-checkmark"></span>
+                        </label>
+                     </div>
+                  </li>
+
                </ul>
             </div>
          </main>
@@ -36,6 +62,7 @@ export default{
    components:{
       ProfileNavVue,
    },
+   props: ['content', 'status', 'name', 'email', 'photo', 'website'],
    
    data() {
       return{
@@ -104,6 +131,44 @@ export default{
                photo: '/src/images/user_2.png',
                website: 'nazli.uysal.com'
             },
+         ],
+         items:[
+            {
+               id:1,
+               content: 'Netus et malesuada fames ac. Malesuada fames ac turpis egestas integer eget aliquet',
+               status: '',
+               class: "class1"
+            },
+            {
+               id:2,
+               content: 'Vitae auctor eu augue ut lectus arcu bibendum. Nunc faucibus a pellentesque sit amet porttitor eget',
+               status: '',
+               class: "class2"
+            },
+            {
+               id:3,
+               content: 'Ut tellus elementum sagittis vitae et. Tortor pretium viverra suspendisse potenti nullam ac tortor',
+               status: 'checked',
+               class: "class3"
+            },
+            {
+               id:4,
+               content: 'Scelerisque varius morbi enim nunc faucibus a pellentesque sit. Quam quisque id diam vel quam elementum pulvinar etiam',
+               status: 'checked',
+               class: "class4"
+            },
+            {
+               id:5,
+               content: 'A diam maecenas sed enim ut sem viverra aliquet. Mauris in aliquam sem fringilla ut morbi tincidunt',
+               status: '',
+               class: "class5"
+            },
+            {
+               id:6,
+               content: 'Purus gravida quis blandit turpis. Velit egestas dui id ornare arcu odio ut sem nulla',
+               status: 'checked',
+               class: "class6"
+            },
          ]
       }
    },
@@ -112,10 +177,12 @@ export default{
          return this.persons.find((person) => person.id === Number(this.id));
       }
    }
+
 }
-
-
 </script>
+
+
+
 
 <style lang="scss">
    @import "../assets/todos_style.scss"

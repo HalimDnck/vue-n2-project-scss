@@ -2,10 +2,10 @@
    <div class="user-sidebar">
       <div class="profile-container">
          <div class="profile">
-            <img src="/src/images/user_1.png" alt="profile image">
+            <img :src="photo" alt="profile image">
             <div class="profile-infos">
-               <h1 class="user-name">Expample</h1>
-               <p class="user-email">example@gmail.com</p>
+               <h1 class="user-name">{{ name }}</h1>
+               <p class="user-email">{{ email }}</p>
             </div>
          </div>
          <hr>
@@ -49,7 +49,11 @@
 </template>
 
 <script>
-
+export default{
+   name: 'ProfileNav',
+   
+   props: ['name', 'email', 'photo', 'website'],
+}
 </script>
 
 <style lang="scss">
