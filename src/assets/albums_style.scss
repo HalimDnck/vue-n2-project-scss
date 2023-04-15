@@ -22,6 +22,58 @@
             }
          }
       }
+
+      main{
+
+         .album-cards{
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+            gap: 40px 100px;
+            
+
+            .card-container{
+               width: 450px;
+               height: 380px;
+
+               display: flex;
+               flex-direction: column;
+               align-items: center;
+               justify-content: flex-start;
+               gap: 40px;
+               transition: all .5s;
+
+               border: 1px solid rgba(128, 128, 128, 0.5);
+               border-radius: 12px;
+               .image-container{
+                  display: flex;
+                  flex-wrap: wrap;
+                  align-items: center;
+                  justify-content: center;
+                  padding-top: 20px;
+                  img{
+                     width: 45%;
+                     height: 55%;
+                  }
+               }
+               .card-text{
+                  width: 90%;
+                  text-align: justify;
+               }
+               &:hover{
+                  border-radius: 12px;
+                  box-shadow: rgba(85, 85, 85, 0.25) 0px 15px 48px 0px;
+               }
+               
+            }
+         }
+         .album-link{
+            text-decoration: none;
+            color: rgba(0, 0, 0, 0.9);
+            font-size: 16px;
+         }
+      }
    }
 
 }

@@ -35,7 +35,7 @@
 
          <router-link :to="{ name: 'Albums'}" custom v-slot="{ navigate }">
             <button @click="navigate" role="link"
-            :class="{ 'active-page': currentRouteName === 'Albums'}" >
+            :class="{ 'active-page': currentRouteName === 'Albums', 'active-page': currentRouteName === 'Photos'}" >
                <div class="active-shape"></div>
                <img src="/src/icons/heartphoto.png" alt="">
                Albums

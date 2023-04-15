@@ -3,6 +3,7 @@ import Users from "./components/Users.vue"
 import Todos from "./components/Todos.vue"
 import Albums from "./components/Albums.vue"
 import Posts from "./components/Posts.vue"
+import Photos from "./components/Photos.vue"
 
 
 
@@ -27,6 +28,11 @@ const routes=[
       name: 'Albums',
       component: Albums,
       path: '/albums/:id',
+   },
+   {
+      name: 'Photos',
+      component: Photos,
+      path: '/albums/photos/:id',
    },
 ];
 

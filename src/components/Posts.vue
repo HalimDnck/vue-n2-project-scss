@@ -53,7 +53,7 @@ export default{
    name: 'Posts',
    components:{
       ProfileNavVue,
-      PostPopup
+      PostPopup,
    },
    props: ['content', 'status', 'name', 'email', 'photo', 'website'],
 

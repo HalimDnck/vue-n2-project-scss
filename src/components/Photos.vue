@@ -1,56 +1,25 @@
 <template>
-   <div class="albums-page">
+   <div class="photos-page">
       <ProfileNavVue 
       :name="person.name"
       :email="person.email"
       :photo="person.photo"/>
 
-      <div class="albums-container">
-         <header>
-            <div class="go-back">
-               <router-link to="/">
-               <img src="../icons/leftarrow.png" alt="go back icon">
-               </router-link>
-               <p>Go Home</p>
-            </div>
-         </header>
+      <div class="photos-container">
          
-         <main>
-            <div class="album-cards">
-               <router-link :to="{ name: 'Photos'}" class="album-link"
-               v-for="person in persons"
-               :key="person.id">
-                  <div class="card-container">
-                     <div class="image-container">
-                        <img src="../images/galery_1.jpg" alt="gallery image">
-                        <img src="../images/galery_2.jpg" alt="gallery image">
-                        <img src="../images/galery_3.jpg" alt="gallery image">
-                        <img src="../images/galery_7.jpg" alt="gallery image">
-                     </div>
-                     <p class="card-text">
-                        Lorem ipsum dolor sit amet consectetur.
-                     </p>
-                  </div>
-               </router-link>
-            </div>
-
-         </main>
-
-
-
       </div>
    </div>
-
 </template>
 
 <script>
 import ProfileNavVue from './ProfileNav.vue';
 
 export default{
-   name: 'Albums',
+   name: 'Photos',
    components:{
       ProfileNavVue,
    },
+
    props: ['content', 'status', 'name', 'email', 'photo', 'website'],
 
 
@@ -132,9 +101,3 @@ export default{
    }
 }
 </script>
-
-
-
-<style lang="scss">
-@import "../assets/albums_style.scss"
-</style>
