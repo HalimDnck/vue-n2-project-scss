@@ -37,8 +37,6 @@ export default{
    },
 
    props: ['content', 'status', 'name', 'email', 'photo', 'website', 'strId'],
-   
-
 
    data() {
       return{
@@ -125,13 +123,8 @@ export default{
          return this.persons.find((person) => person.id === Number(this.id));
       },
    },
-   
 }
-
-
 </script>
-
-
 
 <style scoped lang="scss">
 @import "../assets/photos_style.scss"
