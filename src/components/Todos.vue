@@ -4,7 +4,8 @@
       <ProfileNavVue 
       :name="person.name"
       :email="person.email"
-      :photo="person.photo"/>
+      :photo="person.photo"
+      :id="person.id"/>
 
       <div class="todos-container">
          <header>

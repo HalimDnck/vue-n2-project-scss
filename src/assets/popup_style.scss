@@ -1,0 +1,115 @@
+@import "./styles.scss";
+/* width */
+
+.popup{
+   position: fixed;
+   top: 0;
+   left: 0;
+   right: 0;
+   bottom: 0;
+   z-index: 99;
+   background-color: rgba(0, 0, 0, 0.344);
+
+   display: flex;
+   align-items: center;
+   justify-content: center;
+
+   .inner{
+      background-color: aliceblue;
+      width: 60%;
+      height: 75%;
+      border-radius: 50px;
+
+      //ScrollBar
+      ::-webkit-scrollbar {
+         width: 3px;
+      }
+       ::-webkit-scrollbar-track {
+         background: none;
+      }
+       ::-webkit-scrollbar-thumb {
+         background: #88888850;
+      }
+
+      .header{
+         display: flex;
+         justify-content: space-between;
+         align-items: center;
+         padding: 30px;
+
+         .post-title{
+            font-size: 22px;
+            font-weight: 500;
+         }
+         button{
+            background: none;
+            border: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+         }
+      }
+
+      .post-detail{
+         width: 100%;
+         padding: 0 50px;
+         display: flex;
+         justify-content: space-between;
+         gap: 20px;
+
+         .post-text{
+            width: 2700px;
+            height: 600px;
+
+            overflow-y: scroll;
+            p{
+               width: 90%;
+            }
+         }
+         hr{
+            opacity: .4;
+         }
+
+         .post-comments{
+            width: 1500px;
+            height: 600px;
+            overflow-y: scroll;
+            .comment-title{
+               font-size: 22px;
+               font-weight: 600;
+            }
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+
+            .comment{
+               
+               
+               display: flex;
+               gap: 10px;
+               img{
+                  width: 60px;
+                  height: 60px;
+                  border-radius: 50%;
+                  object-fit: cover;
+               }
+
+               .user-comment{
+                  .name{
+                     font-size: 18px;
+                     font-weight: 500;
+                  }
+                  .comm{
+                     padding-top: 10px;
+                     padding-right: 5px;
+                     font-weight: 300;
+                     font-size: 14px;
+                     text-align: justify;
+                  }
+               }
+            }
+         }
+      }
+   }
+}

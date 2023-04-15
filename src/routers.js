@@ -20,12 +20,12 @@ const routes=[
    },
    {
       name: 'Posts',
-      component: Todos,
+      component: Posts,
       path: '/posts/:id',
    },
    {
       name: 'Albums',
-      component: Todos,
+      component: Albums,
       path: '/albums/:id',
    },
 ];
