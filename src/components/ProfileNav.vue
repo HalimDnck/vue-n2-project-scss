@@ -13,8 +13,10 @@
       
       
       <div class="button-container">
+
          <router-link :to="{ name: 'Todos'}" custom v-slot="{ navigate }">
-            <button class="other-page" @click="navigate" role="link" type="radio">
+            <button @click="navigate" role="link"
+            :class="{ 'active-page': currentRouteName === 'Todos'}">
                <div class="active-shape"></div>
                <img src="/src/icons/checklist.png" alt="">
                Todos
@@ -22,7 +24,9 @@
          </router-link>
 
          <router-link :to="{ name: 'Posts'}" custom v-slot="{ navigate }">
-            <button class="other-page" @click="navigate" role="link" type="radio">
+            <button @click="navigate" role="link"
+            :class="{ 'active-page': currentRouteName === 'Posts'}"
+             >
                <div class="active-shape"></div>
                <img src="/src/icons/notebook.png" alt="">
                Posts
@@ -30,7 +34,8 @@
          </router-link>
 
          <router-link :to="{ name: 'Albums'}" custom v-slot="{ navigate }">
-            <button class="other-page" @click="navigate" role="link" type="radio">
+            <button @click="navigate" role="link"
+            :class="{ 'active-page': currentRouteName === 'Albums'}" >
                <div class="active-shape"></div>
                <img src="/src/icons/heartphoto.png" alt="">
                Albums
@@ -49,34 +54,18 @@
 </template>
 
 <script>
-
 export default{
    name: 'ProfileNav',
    props: ['name', 'email', 'photo', 'website'],
 
-   data() {
-      return{
-         showButtonColor: true,
-      };
-   },
-   methods:{
-      navigate(){
-         this.showButtonColor = !this.showButtonColor;
-      },
-   }
+   computed: {
+    currentRouteName() {
+        return this.$route.name;
+    }
+}
 }
 </script>
 
-<script setup>
-
-const activeBtn = document.querySelector(".active-page")
-const passiveBtn = document.querySelector(".other")
-const passiveBtn2 = document.querySelector(".other2")
-
-
-
-
-</script>
 
 <style lang="scss">
    @import "/src/assets/profile_nav_style.scss";
